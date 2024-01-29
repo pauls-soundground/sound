@@ -140,6 +140,45 @@
     th {
       background-color: #ff0000;
     }
+
+    .urlText{
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #f0f0f0;
+      text-align: center;
+    }
+
+    .box_special{
+      width: 50%;
+      height: 24px;
+      background-color: #08e800;
+      color: rgb(0, 0, 0);
+      align-items: center;
+      margin: auto;
+      justify-content: center;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .all-links{
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border: 1px solid #ccc;
+      padding: 8px;
+      font-size: 16px;
+      margin: auto;
+      width: 200px;
+      max-width: 100%;
+      cursor: pointer;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+
+    .all-links-dropdown-space{
+      margin: auto;
+      display: inline-block;
+    }
   </style>
 </head>
 <body onload="checkIfParams()">
@@ -164,53 +203,34 @@
   <button class="back-btn" onclick="playSoundAuto()">Press for sound!</button>
 </div>
 
-<div id="url-table" style="display: none;">
-  <table>
-    <thead>
-      <tr>
-        <th>Sound Name</th>
-        <th>Author Name</th>
-        <th>Link</th>
-      </tr>
-    </thead>
-    <tbody>
-  
-      <!-- Populate the table with data -->
-      <script>
-        var all_sound_names = ['bitch','chill','shut-up','scream','scream2','orange','quiet','loud','shut-up-howard','be-safe','room','addison','vroom','lucky-goose','howard','voicemail','ah-man','damn','thats-not','okay'];
-        var all_author_names= ['Paul','Paul','Paul','Paul','Paul','Paul','Howard','Howard','Howard','Howard','Carson','Carson','Carson','Carson','Carson','Carson','Holly','Holly','Holly','Holly'];
-        var all_links = ["pauls-soundground.github.io/sound/?s=0",
-"pauls-soundground.github.io/sound/?s=1",
-"pauls-soundground.github.io/sound/?s=2",
-"pauls-soundground.github.io/sound/?s=3",
-"pauls-soundground.github.io/sound/?s=4",
-"pauls-soundground.github.io/sound/?s=5",
-"pauls-soundground.github.io/sound/?s=6",
-"pauls-soundground.github.io/sound/?s=7",
-"pauls-soundground.github.io/sound/?s=8",
-"pauls-soundground.github.io/sound/?s=9",
-"pauls-soundground.github.io/sound/?s=10",
-"pauls-soundground.github.io/sound/?s=11",
-"pauls-soundground.github.io/sound/?s=12",
-"pauls-soundground.github.io/sound/?s=13",
-"pauls-soundground.github.io/sound/?s=14",
-"pauls-soundground.github.io/sound/?s=15",
-"pauls-soundground.github.io/sound/?s=16",
-"pauls-soundground.github.io/sound/?s=17",
-"pauls-soundground.github.io/sound/?s=18",
-"pauls-soundground.github.io/sound/?s=19"];
-  
-        for (var i = 0; i < all_sound_names.length; i++) {
-          document.write('<tr>');
-          document.write('<td>' + all_sound_names[i] + '</td>');
-          document.write('<td>' + all_author_names[i] + '</td>');
-          document.write('<td>' + all_links[i] + '</td>');
-          document.write('</tr>');
-        }
-      </script>
-  
-    </tbody>
-  </table>  
+<div id="all-links-dropdown-space" style="display: none;">
+  <div class="urlText" id="urlHeader">Please select a sound:</div>
+  <label for="all-links"></label> 
+  <select class="all-links" name="all-links" id="all-links">
+      <option value="-1">--SELECT BELOW--</option> 
+      <option value="0">Bitch              - Paul</option> 
+      <option value="1">Chill              - Paul</option> 
+      <option value="2">Shut Up            - Paul</option> 
+      <option value="3">Scream             - Paul</option> 
+      <option value="4">Long Scream        - Paul</option> 
+      <option value="5">Orange             - Paul</option> 
+      <option value="6">F*cking S*hitter   - Howard</option> 
+      <option value="7">F*CKING S*HITTER!  - Howard</option> 
+      <option value="8">Shut Up            - Howard</option> 
+      <option value="9">Be Safe Tonight    - Howard</option> 
+      <option value="10">Room               - Carson</option> 
+      <option value="11">Addison            - Carson</option> 
+      <option value="12">Vroom              - Carson</option> 
+      <option value="13">Lucky Goose        - Carson</option> 
+      <option value="14">Howard             - Carson</option> 
+      <option value="15">Voicemail          - Carson</option> 
+      <option value="16">Ah man             - Holly</option> 
+      <option value="17">Damn               - Holly</option> 
+      <option value="18">That's not         - Holly</option> 
+      <option value="19">Okay               - Holly</option> 
+    </select>    
+    <button class="box_special" id="linkSubmit" onclick="getSoundURL()">Get Link</button>
+    <a class="urlText" id="urlOutput">.</a>
 </div>
 
 <div id="boxes-section" class="boxes-container" style="display: none;">
