@@ -1,6 +1,39 @@
 var initialPassword = "";
+var global_sound_index = -1;
 all_sound_names = ['bitch','chill','shut-up','scream','scream2','orange','quiet','loud','shut-up-howard','be-safe','room','addison','vroom','lucky-goose','howard','voicemail','ah-man','damn','thats-not','okay'];
 all_author_names= ['Paul','Paul','Paul','Paul','Paul','Paul','Howard','Howard','Howard','Howard','Carson','Carson','Carson','Carson','Carson','Carson','Holly','Holly','Holly','Holly'];
+
+function checkIfParams(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams);
+    if(urlParams.has('s')){
+        var sound = urlParams.get('s');
+        global_sound_index = sound;
+        displayAutoBtn();
+        //console.log(sound);
+        //playSound(all_sound_names[sound]);
+    } else {
+        console.log('no params');
+    }
+}
+
+function displayAutoBtn(){
+    document.getElementById('number-grid').style.display = 'none';
+    document.getElementById('reset').style.display = 'none';
+    document.getElementById('passcode-display').style.display = 'none';
+    document.getElementById('btnContainer').style.display = 'block';
+}
+
+function playSoundAuto(){
+    console.log(all_sound_names[global_sound_index]);
+    playSound(all_sound_names[global_sound_index]);
+}
+
+function displayURLs(){
+    document.getElementById('boxes-section').style.display = 'none';
+    document.getElementById('url-table').style.display = 'block';
+}
 
 function send0(){
     initialPassword = initialPassword + "0";
