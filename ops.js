@@ -32,7 +32,13 @@ function playSoundAuto(){
 
 function displayURLs(){
     document.getElementById('boxes-section').style.display = 'none';
-    document.getElementById('url-table').style.display = 'block';
+    document.getElementById('all-links-dropdown-space').style.display = 'block';
+}
+
+function getSoundURL(){
+    index = document.getElementById('all-links').value;
+    url = 'https://pauls-soundground.github.io/sound/?s=' + index;
+    document.getElementById('urlOutput').textContent = url;
 }
 
 function send0(){
