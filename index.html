@@ -124,9 +124,25 @@
     .pw{
       color: #08e800;
     }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      color: black;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      color: white;
+    }
+
+    th {
+      background-color: #ff0000;
+    }
   </style>
 </head>
-<body>
+<body onload="checkIfParams()">
 
 <div class="pw" id="passcode-display">[PASSCODE]</div>
 
@@ -144,6 +160,59 @@
 </div>
 <button class="reset-button" id="reset" onclick="reset()">Reset</button>
 
+<div id="btnContainer" style="display: none;">
+  <button class="back-btn" onclick="playSoundAuto()">Press for sound!</button>
+</div>
+
+<div id="url-table" style="display: none;">
+  <table>
+    <thead>
+      <tr>
+        <th>Sound Name</th>
+        <th>Author Name</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <!-- Populate the table with data -->
+      <script>
+        var all_sound_names = ['bitch','chill','shut-up','scream','scream2','orange','quiet','loud','shut-up-howard','be-safe','room','addison','vroom','lucky-goose','howard','voicemail','ah-man','damn','thats-not','okay'];
+        var all_author_names= ['Paul','Paul','Paul','Paul','Paul','Paul','Howard','Howard','Howard','Howard','Carson','Carson','Carson','Carson','Carson','Carson','Holly','Holly','Holly','Holly'];
+        var all_links = ["pauls-soundground.github.io/sound/?s=0",
+"pauls-soundground.github.io/sound/?s=1",
+"pauls-soundground.github.io/sound/?s=2",
+"pauls-soundground.github.io/sound/?s=3",
+"pauls-soundground.github.io/sound/?s=4",
+"pauls-soundground.github.io/sound/?s=5",
+"pauls-soundground.github.io/sound/?s=6",
+"pauls-soundground.github.io/sound/?s=7",
+"pauls-soundground.github.io/sound/?s=8",
+"pauls-soundground.github.io/sound/?s=9",
+"pauls-soundground.github.io/sound/?s=10",
+"pauls-soundground.github.io/sound/?s=11",
+"pauls-soundground.github.io/sound/?s=12",
+"pauls-soundground.github.io/sound/?s=13",
+"pauls-soundground.github.io/sound/?s=14",
+"pauls-soundground.github.io/sound/?s=15",
+"pauls-soundground.github.io/sound/?s=16",
+"pauls-soundground.github.io/sound/?s=17",
+"pauls-soundground.github.io/sound/?s=18",
+"pauls-soundground.github.io/sound/?s=19"];
+  
+        for (var i = 0; i < all_sound_names.length; i++) {
+          document.write('<tr>');
+          document.write('<td>' + all_sound_names[i] + '</td>');
+          document.write('<td>' + all_author_names[i] + '</td>');
+          document.write('<td>' + all_links[i] + '</td>');
+          document.write('</tr>');
+        }
+      </script>
+  
+    </tbody>
+  </table>  
+</div>
+
 <div id="boxes-section" class="boxes-container" style="display: none;">
     <button class="box" id="paul" onclick="getPerson('paul')">Paul's Soundboard</button>
     <button class="box" id="howard" onclick="getPerson('howard')">Howard's Soundboard</button>
@@ -152,6 +221,7 @@
     <button class="box" id="owen" onclick="getPerson('owen')">Owen's Soundboard</button>
     <button class="box" id="everyone" onclick="getPerson('all')">--EVERYONE--</button>
     <button class="box" id="random" onclick="displayRandom()">--RANDOM--</button>
+    <button class="box" id="all_urls" onclick="displayURLs()">--ALL SHARE LINKS--</button>
   </div>
 
 <div class="random-button" id="random-button" style="display: none;">
