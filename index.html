@@ -37,6 +37,23 @@
       cursor: pointer;
     }
 
+    .sound-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+      gap: 10px; /* Adjust the gap between items as needed */
+      padding: 20px;
+    }
+
+    .sound-grid button {
+      background-color: #ff0000; /* Set your desired background color */
+      color: #fff; /* Set your desired text color */
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
     .reset-button{
       width: 100px;
       height: 50px;
@@ -85,6 +102,18 @@
       font-weight: bold;
     }
 
+    #all{
+      width: 10%;
+      height: 35px;
+      background-color: #f0f0f0;
+      color: rgb(0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
     .pw{
       color: #08e800;
     }
@@ -114,6 +143,7 @@
     <button class="box" id="carson" onclick="getPerson('carson')">Carson's Soundboard</button>
     <button class="box" id="holly" onclick="getPerson('holly')">Holly's Soundboard</button>
     <button class="box" id="owen" onclick="getPerson('owen')">Owen's Soundboard</button>
+    <button class="box" id="everyone" onclick="getPerson('all')">--EVERYONE--</button>
   </div>
 
 <div class="board" id="paul-board" style="display: none;">
@@ -158,6 +188,31 @@
     <button class="box" onclick="playSound('')">--Not yet recorded--</button>
     <button class="back-btn" onclick="goBack()">Back</button>
 </div>
+
+<div class="sound-grid" id="sound-grid" style="display: none;">
+  <button onclick="playSound('bitch')">Bitch</button>
+  <button onclick="playSound('chill')">Chill</button>
+  <button onclick="playSound('shut-up')">Shut up</button>
+  <button onclick="playSound('scream')">Scream</button>
+  <button onclick="playSound('scream2')">SCREAM!!!!</button>
+  <button onclick="playSound('orange')">Orange</button>
+  <button onclick="playSound('quiet')">F**king Sh*tter</button>
+  <button onclick="playSound('loud')">F**KING SH*TTER</button>
+  <button onclick="playSound('shut-up-howard')">Shut the f*ck up</button>
+  <button onclick="playSound('be-safe')">Be safe tonight</button>
+  <button onclick="playSound('room')">Room</button>
+  <button onclick="playSound('addison')">Addison</button>
+  <button onclick="playSound('vroom')">Vroom</button>
+  <button onclick="playSound('lucky-goose')">Lucky Goose</button>
+  <button onclick="playSound('howard')">Howard</button>
+  <button onclick="playSound('voicemail')">Voicemail</button>
+  <button onclick="playSound('ah-man')">Ah man</button>
+  <button onclick="playSound('damn')">Damn</button>
+  <button onclick="playSound('thats-not')">That's not--</button>
+  <button onclick="playSound('okay')">Okay</button>
+</div>
+<button class="back-btn" id="all" onclick="goBack_Everyone()" style="display: none;">Back</button>
+
 </body>
 <script src="ops.js"></script>
 </html>
