@@ -33,6 +33,8 @@ function playSoundAuto(){
 function displayURLs(){
     document.getElementById('boxes-section').style.display = 'none';
     document.getElementById('all-links-dropdown-space').style.display = 'block';
+    document.getElementById('linkSubmit').style.display = 'block';
+    document.getElementById('urlOutput').style.display = 'block';
 }
 
 function getSoundURL(){
