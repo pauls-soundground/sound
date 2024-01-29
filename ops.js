@@ -84,6 +84,8 @@ function getPerson(person){
         loadFinal('addison');
     } else if (person == "owen"){
         loadFinal('owen');
+    } else if (person == "all"){
+        loadFinal('all');
     }
 }
 
@@ -106,6 +108,10 @@ function loadFinal(person){
     } else if (person == "owen"){
         document.getElementById('boxes-section').style.display = 'none';
         document.getElementById('owen-board').style.display = 'block';
+    } else if (person == "all"){
+        document.getElementById('boxes-section').style.display = 'none';
+        document.getElementById('sound-grid').style.display = 'block';
+        document.getElementById('all').style.display = 'block';
     }
 }
 
@@ -122,4 +128,10 @@ function goBack(){
     document.getElementById('holly-board').style.display = 'none';
     document.getElementById('owen-board').style.display = 'none';
     document.getElementById('addison-board').style.display = 'none';
+}
+
+function goBack_Everyone(){
+    document.getElementById('boxes-section').style.display = 'block';
+    document.getElementById('sound-grid').style.display = 'none';
+    document.getElementById('all').style.display = 'none';
 }
