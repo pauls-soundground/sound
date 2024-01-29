@@ -1,4 +1,5 @@
 initialPassword = "";
+all_sound_names = ['bitch','chill','shut-up','scream','scream2','orange','quiet','loud','shut-up-howard','be-safe','room','addison','vroom','lucky-goose','howard','voicemail','ah-man','damn','thats-not','okay'];
 
 function send0(){
     initialPassword = initialPassword + "0";
@@ -86,6 +87,8 @@ function getPerson(person){
         loadFinal('owen');
     } else if (person == "all"){
         loadFinal('all');
+    } else if (person == "random"){
+        playRandomSequence();
     }
 }
 
@@ -134,4 +137,32 @@ function goBack_Everyone(){
     document.getElementById('boxes-section').style.display = 'block';
     document.getElementById('sound-grid').style.display = 'none';
     document.getElementById('all').style.display = 'none';
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+  
+function playRandomSequence(){
+    document.getElementById('boxes-section').style.display = 'none';
+    document.getElementById('input').style.display = 'block';
+}
+
+function submitRandomSequence(){
+    num = document.getElementById('number').value;
+    looping(num);
+}
+
+function looping(num){
+    for (var i=0; i<num; i++){
+        console.log(i);
+        const myTimeout = setTimeout(delay, 250);
+        rand = getRandomInt(all_sound_names.length - 1);
+        playSound(all_sound_names[rand]);
+    }
+}
+
+function delay(){
+    rand = getRandomInt(all_sound_names.length - 1);
+    playSound(all_sound_names[rand]);
 }
