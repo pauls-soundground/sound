@@ -176,8 +176,9 @@
     }
 
     .all-links-dropdown-space{
-      margin: auto;
-      display: inline-block;
+      display: flex;
+      align-items: center; 
+      justify-content: center;
     }
   </style>
 </head>
@@ -229,9 +230,9 @@
       <option value="18">That's not         - Holly</option> 
       <option value="19">Okay               - Holly</option> 
     </select>    
-    <button class="box_special" id="linkSubmit" onclick="getSoundURL()">Get Link</button>
-    <a class="urlText" id="urlOutput">.</a>
-</div>
+    <button class="box_special" id="linkSubmit" style="display: none;" onclick="getSoundURL()">Get Link</button>
+    <a class="urlText" style="display: none;" id="urlOutput">.</a>    
+  </div>
 
 <div id="boxes-section" class="boxes-container" style="display: none;">
     <button class="box" id="paul" onclick="getPerson('paul')">Paul's Soundboard</button>
