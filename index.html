@@ -37,6 +37,16 @@
       cursor: pointer;
     }
 
+    .reset-button{
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid #333;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     .boxes-container {
       display: flex;
       justify-content: space-between;
@@ -89,8 +99,8 @@
   <button id="btn7" onclick="send7()">7</button>
   <button id="btn8" onclick="send8()">8</button>
   <button id="btn9" onclick="send9()">9</button>
-  <button id="reset" onclick="reset()">Reset</button>
 </div>
+<button class="reset-button" id="reset" onclick="reset()">Reset</button>
 
 <div id="boxes-section" class="boxes-container" style="display: none;">
     <button class="box" id="paul" onclick="getPerson('paul')">Paul's Soundboard</button>
