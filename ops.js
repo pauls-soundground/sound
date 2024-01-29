@@ -156,7 +156,7 @@ function submitRandomSequence(){
 function looping(num){
     for (var i=0; i<num; i++){
         console.log(i);
-        const myTimeout = setTimeout(delay, 250);
+        const myTimeout = setTimeout(delay, 1000);
         rand = getRandomInt(all_sound_names.length - 1);
         playSound(all_sound_names[rand]);
     }
