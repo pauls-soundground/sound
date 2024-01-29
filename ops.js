@@ -1,5 +1,6 @@
-initialPassword = "";
+var initialPassword = "";
 all_sound_names = ['bitch','chill','shut-up','scream','scream2','orange','quiet','loud','shut-up-howard','be-safe','room','addison','vroom','lucky-goose','howard','voicemail','ah-man','damn','thats-not','okay'];
+all_author_names= ['Paul','Paul','Paul','Paul','Paul','Paul','Howard','Howard','Howard','Howard','Carson','Carson','Carson','Carson','Carson','Carson','Holly','Holly','Holly','Holly'];
 
 function send0(){
     initialPassword = initialPassword + "0";
@@ -130,7 +131,8 @@ function goBack(){
     document.getElementById('carson-board').style.display = 'none';
     document.getElementById('holly-board').style.display = 'none';
     document.getElementById('owen-board').style.display = 'none';
-    document.getElementById('addison-board').style.display = 'none';
+    document.getElementById('random-button').style.display = 'none';
+    console.log('hidden');
 }
 
 function goBack_Everyone(){
@@ -139,30 +141,19 @@ function goBack_Everyone(){
     document.getElementById('all').style.display = 'none';
 }
 
+function displayRandom(){
+    document.getElementById('boxes-section').style.display = 'none';
+    document.getElementById('random-button').style.display = 'block';
+}
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
-  
-function playRandomSequence(){
-    document.getElementById('boxes-section').style.display = 'none';
-    document.getElementById('input').style.display = 'block';
-}
 
-function submitRandomSequence(){
-    num = document.getElementById('number').value;
-    looping(num);
-}
-
-function looping(num){
-    for (var i=0; i<num; i++){
-        console.log(i);
-        const myTimeout = setTimeout(delay, 1000);
-        rand = getRandomInt(all_sound_names.length - 1);
-        playSound(all_sound_names[rand]);
-    }
-}
-
-function delay(){
-    rand = getRandomInt(all_sound_names.length - 1);
-    playSound(all_sound_names[rand]);
+function getRandomSound(){
+    var num = getRandomInt(all_sound_names.length-1);
+    playSound(all_sound_names[num]);
+    var display = "'" + all_sound_names[num] + "'" + ' by: ' + all_author_names[num];
+    display = display.toUpperCase();
+    document.getElementById('author').textContent = display;
 }
