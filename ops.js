@@ -112,3 +112,13 @@ function playSound(sound){
     var audio = new Audio(sound + '.mp3');
     audio.play();
 }
+
+function goBack(){
+    document.getElementById('boxes-section').style.display = 'block';
+    document.getElementById('paul-board').style.display = 'none';
+    document.getElementById('howard-board').style.display = 'none';
+    document.getElementById('carson-board').style.display = 'none';
+    document.getElementById('holly-board').style.display = 'none';
+    document.getElementById('owen-board').style.display = 'none';
+    document.getElementById('addison-board').style.display = 'none';
+}
