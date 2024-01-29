@@ -113,14 +113,12 @@
       border-radius: 5px;
       font-weight: bold;
     }
-    
-    .input{
-      font-size: 20px;
+
+    #author {
+      font-size: 26px;
       margin-bottom: 10px;
-      color: white;
-      font-family:Arial, Helvetica, sans-serif;
-      justify-content: center;
-      align-items: center;
+      color:#f0f0f0;
+      text-align: center;
     }
 
     .pw{
@@ -152,9 +150,15 @@
     <button class="box" id="carson" onclick="getPerson('carson')">Carson's Soundboard</button>
     <button class="box" id="holly" onclick="getPerson('holly')">Holly's Soundboard</button>
     <button class="box" id="owen" onclick="getPerson('owen')">Owen's Soundboard</button>
-    <button class="box" id="everyone" onclick="getPerson('all')">--EVERYONE (You Choose)--</button>
-    <button class="box" id="everyone" onclick="playRandomSequence()" style="display:none;">--EVERYONE (Random)--</button>
+    <button class="box" id="everyone" onclick="getPerson('all')">--EVERYONE--</button>
+    <button class="box" id="random" onclick="displayRandom()">--RANDOM--</button>
   </div>
+
+<div class="random-button" id="random-button" style="display: none;">
+    <div id="author">--</div>
+    <button class="box" onclick="getRandomSound()">Play Random Song</button>
+    <button class="back-btn" onclick="goBack()">Back</button>
+</div>
 
 <div class="board" id="paul-board" style="display: none;">
     <button class="box" onclick="playSound('bitch')">Bitch</button>
@@ -197,12 +201,6 @@
     <button class="box" onclick="playSound('')">--Not yet recorded--</button>
     <button class="box" onclick="playSound('')">--Not yet recorded--</button>
     <button class="back-btn" onclick="goBack()">Back</button>
-</div>
-
-<div class="input" id="input" style="display: none;">
-  <h1>Please choose a number around 1000</h1>
-  <input type="number" id="number"></input>
-  <button id="enter" onclick="submitRandomSequence()">Submit</button>
 </div>
 
 <div class="sound-grid" id="sound-grid" style="display: none;">
