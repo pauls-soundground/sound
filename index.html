@@ -44,6 +44,8 @@
       border: 1px solid #333;
       font-size: 18px;
       font-weight: bold;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
     }
 
@@ -90,7 +92,7 @@
 </head>
 <body>
 
-<div id="passcode-display">[PASSCODE]</div>
+<div class="pw" id="passcode-display">[PASSCODE]</div>
 
 <div class="number-grid" id="number-grid">
   <button id="btn0" onclick="send0()">0</button>
@@ -111,13 +113,13 @@
     <button class="box" id="howard" onclick="getPerson('howard')">Howard's Soundboard</button>
     <button class="box" id="carson" onclick="getPerson('carson')">Carson's Soundboard</button>
     <button class="box" id="holly" onclick="getPerson('holly')">Holly's Soundboard</button>
-    <button class="box" id="addison" onclick="getPerson('addison')">Addison's Soundboard</button>
     <button class="box" id="owen" onclick="getPerson('owen')">Owen's Soundboard</button>
   </div>
 
 <div class="board" id="paul-board" style="display: none;">
     <button class="box" onclick="playSound('bitch')">Bitch</button>
     <button class="box" onclick="playSound('chill')">Chill</button>
+    <button class="box" onclick="playSound('shut-up')">Shut up</button>
     <button class="box" onclick="playSound('shut-up')">Shut up</button>
     <button class="back-btn" onclick="goBack()">Back</button>
 </div>
@@ -148,22 +150,12 @@
     <button class="back-btn" onclick="goBack()">Back</button>
 </div>
 
-<div class="board" id="addison-board" style="display: none;">
-    <button class="box" onclick="playSound('bitch')">Bitch</button>
-    <button class="box" onclick="playSound('chill')">Chill</button>
-    <button class="box" onclick="playSound('shut-up')">Shut up</button>
-    <button class="back-btn" onclick="goBack()">Back</button>
-</div>
-
 <div class="board" id="owen-board" style="display: none;">
-    <button class="box" onclick="playSound('bitch')">Bitch</button>
-    <button class="box" onclick="playSound('chill')">Chill</button>
-    <button class="box" onclick="playSound('shut-up')">Shut up</button>
+    <button class="box" onclick="playSound('')">--Not yet recorded--</button>
+    <button class="box" onclick="playSound('')">--Not yet recorded--</button>
+    <button class="box" onclick="playSound('')">--Not yet recorded--</button>
     <button class="back-btn" onclick="goBack()">Back</button>
 </div>
-
-
-
 </body>
 <script src="ops.js"></script>
 </html>
