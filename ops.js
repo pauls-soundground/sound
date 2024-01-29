@@ -68,6 +68,7 @@ function loadSoundboard(){
     document.getElementById('number-grid').style.display = 'none';
     document.getElementById('passcode-display').style.display = 'none';
     document.getElementById('boxes-section').style.display = 'block';
+    document.getElementById('reset').style.display = 'none';
 }
 
 function getPerson(person){
