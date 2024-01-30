@@ -173,6 +173,9 @@ function goBack(){
     document.getElementById('holly-board').style.display = 'none';
     document.getElementById('owen-board').style.display = 'none';
     document.getElementById('random-button').style.display = 'none';
+    document.getElementById('all-links-dropdown-space').style.display = 'none';
+    document.getElementById('urlOutput').textContent = '';
+    document.getElementById('all-links').value = -1;
     console.log('hidden');
 }
 
