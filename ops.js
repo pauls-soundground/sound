@@ -40,7 +40,14 @@ function displayURLs(){
 function getSoundURL(){
     index = document.getElementById('all-links').value;
     url = 'https://pauls-soundground.github.io/sound/?s=' + index;
-    document.getElementById('urlOutput').textContent = url;
+    try{
+        navigator.clipboard.writeText(url);
+        document.getElementById('urlOutput').textContent = 'Link copied to clipboard = SUCCESS';
+    } catch (error){
+        console.error(error);
+        document.getElementById('urlOutput').textContent = 'Link copied to clipboard = FAILED';
+    }
+
 }
 
 function send0(){
