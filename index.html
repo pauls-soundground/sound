@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Soundboard by Paul</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -39,14 +40,14 @@
 
     .sound-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* Adjust the number of columns as needed */
-      gap: 10px; /* Adjust the gap between items as needed */
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px; 
       padding: 20px;
     }
 
     .sound-grid button {
-      background-color: #ff0000; /* Set your desired background color */
-      color: #fff; /* Set your desired text color */
+      background-color: #ff0000; 
+      color: #fff;
       padding: 10px;
       font-size: 14px;
       cursor: pointer;
@@ -248,7 +249,7 @@
 
 <div class="random-button" id="random-button" style="display: none;">
     <div id="author">--</div>
-    <button class="box" onclick="getRandomSound()">Play Random Song</button>
+    <button class="box" onclick="getRandomSound()">Play Random Sound</button>
     <button class="back-btn" onclick="goBack()">Back</button>
 </div>
 
